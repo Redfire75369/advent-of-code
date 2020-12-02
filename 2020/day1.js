@@ -203,20 +203,35 @@ const inputs = input.split("\n").map(x => Number(x));
 
 /* Part 1 */
 for (let i = 0; i < inputs.length; i++) {
+	let complete = false;
 	for (let j = 0; j < inputs.length; j++) {
 		if (inputs[i] + inputs[j] == 2020) {
-			console.log(inputs[i] * inputs[j]);
+			complete = true;
+			console.log("Part 1: " + inputs[i] * inputs[j]);
+			break;
 		}
+	}
+	if (complete) {
+		break;
 	}
 }
 
 /* Part 2 */
 for (let i = 0; i < inputs.length; i++) {
+	let complete = false;
 	for (let j = 0; j < inputs.length; j++) {
 		for (let k = 0; k < inputs.length; k++) {
 			if (inputs[i] + inputs[j] + inputs[k] == 2020) {
-				console.log(inputs[i] * inputs[j] * inputs[k]);
+				complete = true;
+				console.log("Part 2: " + inputs[i] * inputs[j] * inputs[k]);
+				break;
 			}
 		}
+		if (complete) {
+			break;
+		}
+	}
+	if (complete) {
+		break;
 	}
 }
