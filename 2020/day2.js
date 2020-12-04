@@ -1001,27 +1001,37 @@ const input = `4-7 z: zzzfzlzzz
 
 const inputs = input.split("\n").map(x => x.split(" "));
 
-var successful = 0;
 
 /* Part 1 */
-for (let i = 0; i < inputs.length; i++) {
-	let x = inputs[i];
-	let amount = x[2].split("").filter(y => y == x[1][0]).length;
-	if (amount >= x[0].split("-")[0] && amount <= x[0].split("-")[1]) {
-		successful++;
+function part1() {
+	let successful = 0;
+
+	for (let i = 0; i < inputs.length; i++) {
+		let x = inputs[i];
+		let amount = x[2].split("").filter(y => y === x[1][0]).length;
+		if (amount >= x[0].split("-")[0] && amount <= x[0].split("-")[1]) {
+			successful++;
+		}
 	}
+
+	return successful;
 }
 
-console.log("Part 1: " + successful);
+console.log("Part 1: " + part1());
 
 /* Part 2 */
-successful = 0;
+function part2() {
+	let successful = 0;
 
-for (let i = 0; i < inputs.length; i++) {
-	let x = inputs[i];
-	if ((x[2][x[0].split("-")[0] - 1] == x[1][0] || x[2][x[0].split("-")[1] - 1] == x[1][0]) && !(x[2][x[0].split("-")[0] - 1] == x[1][0] && x[2][x[0].split("-")[1] - 1] == x[1][0])) {
-		successful++;
+	for (let i = 0; i < inputs.length; i++) {
+		let x = inputs[i];
+		if ((x[2][x[0].split("-")[0] - 1] === x[1][0] || x[2][x[0].split("-")[1] - 1] === x[1][0])
+			&& !(x[2][x[0].split("-")[0] - 1] === x[1][0] && x[2][x[0].split("-")[1] - 1] === x[1][0])) {
+			successful++;
+		}
 	}
+
+	return successful;
 }
 
-console.log("Part 2: " + successful);
+console.log("Part 2: " + part2());

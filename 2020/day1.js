@@ -202,36 +202,29 @@ const input = `1713
 const inputs = input.split("\n").map(x => Number(x));
 
 /* Part 1 */
-for (let i = 0; i < inputs.length; i++) {
-	let complete = false;
-	for (let j = 0; j < inputs.length; j++) {
-		if (inputs[i] + inputs[j] == 2020) {
-			complete = true;
-			console.log("Part 1: " + inputs[i] * inputs[j]);
-			break;
+function part1() {
+	for (let i = 0; i < inputs.length; i++) {
+		for (let j = 0; j < inputs.length; j++) {
+			if (inputs[i] + inputs[j] === 2020) {
+				return inputs[i] * inputs[j];
+			}
 		}
-	}
-	if (complete) {
-		break;
 	}
 }
 
-/* Part 2 */
-for (let i = 0; i < inputs.length; i++) {
-	let complete = false;
-	for (let j = 0; j < inputs.length; j++) {
-		for (let k = 0; k < inputs.length; k++) {
-			if (inputs[i] + inputs[j] + inputs[k] == 2020) {
-				complete = true;
-				console.log("Part 2: " + inputs[i] * inputs[j] * inputs[k]);
-				break;
+console.log("Part 1: " + part1());
+
+	/* Part 2 */
+function part2() {
+	for (let i = 0; i < inputs.length; i++) {
+		for (let j = 0; j < inputs.length; j++) {
+			for (let k = 0; k < inputs.length; k++) {
+				if (inputs[i] + inputs[j] + inputs[k] === 2020) {
+					return inputs[i] * inputs[j] * inputs[k];
+				}
 			}
 		}
-		if (complete) {
-			break;
-		}
-	}
-	if (complete) {
-		break;
 	}
 }
+
+console.log("Part 2: " + part2());
