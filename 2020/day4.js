@@ -1185,8 +1185,8 @@ function part2() {
 
 	let validated = 0;
 
-	for (let i = 0; i < passportInfos.length; i++) {
-		let fields = passportInfos[i].split(/\s/);
+	for (let i = 0; i < inputs.length; i++) {
+		let fields = inputs[i].split(/\s/);
 		let valid = true;
 
 		for (let j = 0; j < Object.keys(requiredFields).length; j++) {
