@@ -773,34 +773,37 @@ const inputs = input.split("\n");
 
 /* Part 1 */
 function part1() {
-    return Math.max(...inputs.map(input => {
-        input = input.split("");
-        const row = parseInt(input.slice(0, 7).map(value => value === "F" ? 0 : 1).join(""), 2);
-        const column = parseInt(input.slice(7, 10).map(value => value === "L" ? 0 : 1).join(""), 2);
-        return row * 8 + column;
-    }));
+	return Math.max(...inputs.map(input => {
+		input = input.split("");
+		const row = parseInt(input.slice(0, 7).map(value => value === "F" ? 0 : 1).join(""), 2);
+		const column = parseInt(input.slice(7, 10).map(value => value === "L" ? 0 : 1).join(""), 2);
+		return row * 8 + column;
+	}));
 }
 
 console.log("Part 1: " + part1());
 
 /* Part 2 */
 function part2() {
-    let result;
-    inputs.map(input => {
-        input = input.split("");
-        const row = parseInt(input.slice(0, 7).map(value => value === "F" ? 0 : 1).join(""), 2);
-        const column = parseInt(input.slice(7, 10).map(value => value === "L" ? 0 : 1).join(""), 2);
-        return row * 8 + column;
-    }).sort((a, b) => a - b).forEach((value, i, array) => {
-        if (result === undefined) {
-            if (array[i - 1] !== value - 1 && array[i - 1] !== undefined) {
-                result = value - 1;
-            } else if (array[i + 1] !== value + 1 && array[i + 1] !== undefined) {
-                result = value + 1;
-            }
-        }
-    });
-    return result;
+	let result;
+	inputs.map(input => {
+		input = input.split("");
+		const row = parseInt(input.slice(0, 7).map(value => value === "F" ? 0 : 1).join(""), 2);
+		const column = parseInt(input.slice(7, 10).map(value => value === "L" ? 0 : 1).join(""), 2);
+		return row * 8 + column;
+	}).sort((a, b) => {
+		return a - b;
+	}).forEach((value, i, array) => {
+		if (result === undefined) {
+			if (array[i - 1] !== value - 1 && array[i - 1] !== undefined) {
+				result = value - 1;
+			} else if (array[i + 1] !== value + 1 && array[i + 1] !== undefined) {
+				result = value + 1;
+			}
+		}
+	});
+
+	return result;
 }
 
 console.log("Part 2: " + part2());

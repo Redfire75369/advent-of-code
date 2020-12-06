@@ -1212,7 +1212,7 @@ function part2() {
 									break;
 							}
 						}
-					}else if (key === "hgt") {
+					} else if (key === "hgt") {
 						if (field.split(":")[1].match(/^\d{3}cm/)) {
 							validField |= Number(field.split(":")[1].match(/^\d{3}/)[0]) <= 193 && Number(field.split(":")[1].match(/^\d{3}/)[0]) >= 150;
 						} else if (field.split(":")[1].match(/^\d{2}in/)) {
@@ -1223,6 +1223,7 @@ function part2() {
 					}
 				}
 			}
+
 			if (!validField) {
 				valid = false;
 			}
