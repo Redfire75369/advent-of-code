@@ -773,10 +773,10 @@ const inputs = input.split("\n");
 
 /* Part 1 */
 function part1() {
-	return Math.max(...inputs.map(input => {
-		input = input.split("");
-		const row = parseInt(input.slice(0, 7).map(value => value === "F" ? 0 : 1).join(""), 2);
-		const column = parseInt(input.slice(7, 10).map(value => value === "L" ? 0 : 1).join(""), 2);
+	return Math.max(...inputs.map(v => {
+		v = v.split("");
+		const row = parseInt(v.slice(0, 7).map(w => w === "F" ? 0 : 1).join(""), 2);
+		const column = parseInt(v.slice(7, 10).map(w => w === "L" ? 0 : 1).join(""), 2);
 		return row * 8 + column;
 	}));
 }
@@ -786,19 +786,19 @@ console.log("Part 1: " + part1());
 /* Part 2 */
 function part2() {
 	let result;
-	inputs.map(input => {
-		input = input.split("");
-		const row = parseInt(input.slice(0, 7).map(value => value === "F" ? 0 : 1).join(""), 2);
-		const column = parseInt(input.slice(7, 10).map(value => value === "L" ? 0 : 1).join(""), 2);
+	inputs.map(v => {
+		v = v.split("");
+		const row = parseInt(input.slice(0, 7).map(w => w === "F" ? 0 : 1).join(""), 2);
+		const column = parseInt(input.slice(7, 10).map(w => w === "L" ? 0 : 1).join(""), 2);
 		return row * 8 + column;
 	}).sort((a, b) => {
 		return a - b;
-	}).forEach((value, i, array) => {
+	}).forEach((v, i, array) => {
 		if (result === undefined) {
-			if (array[i - 1] !== value - 1 && array[i - 1] !== undefined) {
-				result = value - 1;
-			} else if (array[i + 1] !== value + 1 && array[i + 1] !== undefined) {
-				result = value + 1;
+			if (array[i - 1] !== v - 1 && array[i - 1] !== undefined) {
+				result = v - 1;
+			} else if (array[i + 1] !== v + 1 && array[i + 1] !== undefined) {
+				result = v + 1;
 			}
 		}
 	});

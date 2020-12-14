@@ -103,7 +103,7 @@ const input = `79
 12
 152`;
 
-const inputs = input.split("\n").map(x => Number(x)).sort((a, b) => a - b);
+const inputs = input.split("\n").map(v => Number(v)).sort((a, b) => a - b);
 inputs.push(Math.max(...inputs) + 3);
 inputs.unshift(0);
 
@@ -122,12 +122,12 @@ function part1() {
 			}
 		}
 	}
-	
+
 	let jolts = 0;
 	const adapters = [];
 	let oneV = 0;
 	let threeV = 0;
-	
+
 	for (let i = 0; i < inputs.length; i++) {
 		if (inputs[i] <= jolts + 3) {
 			if (inputs[i] === jolts + 1) {
@@ -151,7 +151,7 @@ console.log("Part 1: " + part1());
 function part2() {
 	const routes = {};
 	routes[inputs[inputs.length - 1]] = 1;
-	
+
 	for (let i = inputs.length - 2; i >= 0; i--) {
 		routes[inputs[i]] = 0;
 
@@ -161,7 +161,7 @@ function part2() {
 			}
 		}
 	}
-	
+
 	return routes[0];
 }
 console.log("Part 2: " + part2());

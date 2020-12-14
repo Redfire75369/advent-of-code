@@ -2160,7 +2160,7 @@ rhgu
 hr
 pru`;
 
-const inputs = input.split("\n\n").map(x => x.split("\n"));
+const inputs = input.split("\n\n").map(v => v.split("\n"));
 
 /* Part 1 */
 function part1() {
@@ -2180,7 +2180,7 @@ function part1() {
 
 		sum += Object.keys(answers).length;
 	}
-	
+
 	return sum;
 }
 

@@ -601,9 +601,9 @@ inputs.forEach(x => {
 
 	const primary = pri.split(" ").slice(0, 2).join(" ");
 
-	const secondary = sec.split(", ").map((value, index, array) => {
-		let words = value.split(" ");
-		if (value === "no other bags.") {
+	rules[primary] = sec.split(", ").map((v, i, arr) => {
+		let words = v.split(" ");
+		if (v === "no other bags.") {
 			return {
 				number: 0,
 				type: "none"
@@ -611,12 +611,10 @@ inputs.forEach(x => {
 		} else {
 			return {
 				number: Number(words[0]),
-				type: index === array.length - 1 ? `${words[1]} ${words[2].substr(0, words[2].length)}` : `${words[1]} ${words[2]}`
+				type: i === arr.length - 1 ? `${words[1]} ${words[2].substr(0, words[2].length)}` : `${words[1]} ${words[2]}`
 			}
 		}
 	});
-
-	rules[primary] = secondary;
 });
 
 function part1() {

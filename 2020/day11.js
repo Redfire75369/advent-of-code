@@ -89,7 +89,7 @@ LLLLLLLL.LLLL.LLLLLLLLL.LLLLLLLLL.LLLLL.LLLLL.L.LLLL.LLLLL.LLLLLLLLLLLLLLLLL.LLL
 LLLLLLLL.LLLL.LLLLLLLLLLLLLL.LLLL.LLLLLLLLLLL.LLLLLLLLLLLL.LLLLLLLL.LLLLLLLL.LLLLLLL.L.LLLLL.LL
 LLLLLLLL.LLLL.LLLLLLLLL.LLLLL.LLLLLLLLL.LLLLL.LLLLLLLLLLLL.LLLLLLLL.LLLLLLLLLLLLLLLL.LLLLLLLLLL`;
 
-const inputs = input.split("\n").map(x => x.split(""));
+const inputs = input.split("\n").map(v => v.split(""));
 
 /* Part 1 */
 function part1() {
@@ -233,8 +233,7 @@ function part2() {
 	do {
 		changed = false;
 		seats = nonRef2DArray(newSeats);
-		// console.log(seats.map(x => x.join("")).join("\n"));
-		// console.log("");
+
 		for (let y = 0; y < seats.length; y++) {
 			for (let x = 0; x < seats[y].length; x++) {
 				if (newSeats[y][x] === "L" && countVisibleSeats(x, y) === 0) {

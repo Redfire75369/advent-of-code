@@ -648,9 +648,9 @@ function part2() {
 		return acc;
 	}
 	for (let i = 0; i < inputs.length; i++) {
-		const newInputs = inputs.map((value, index) => {
-			if (index === i) {
-				const rules = value.split(" ");
+		const newInputs = inputs.map((v, j) => {
+			if (j === i) {
+				const rules = v.split(" ");
 				if (rules[0] === "nop") {
 					rules[0] = "jmp";
 					return rules.join(" ");
@@ -658,9 +658,9 @@ function part2() {
 					rules[0] = "nop";
 					return rules.join(" ");
 				}
-				return value;
+				return v;
 			}
-			return value;
+			return v;
 		});
 		if (check(newInputs)) {
 			return [i, check(newInputs)];

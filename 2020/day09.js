@@ -999,7 +999,7 @@ const input = `2
 63180888321104
 61230054185338`;
 
-const inputs = input.split("\n").map(x => Number(x));
+const inputs = input.split("\n").map(v => Number(v));
 
 let preamble = inputs.slice(0, 25);
 
@@ -1018,7 +1018,7 @@ function part1() {
 		if (!foundSum) {
 			return x;
 		}
-		preamble = inputs.slice(i - 24, i + 1); 
+		preamble = inputs.slice(i - 24, i + 1);
 	}
 }
 

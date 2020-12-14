@@ -999,7 +999,7 @@ const input = `4-7 z: zzzfzlzzz
 4-8 s: ssssssscs
 12-20 t: ttttttltttvttttttttt`;
 
-const inputs = input.split("\n").map(x => x.split(" "));
+const inputs = input.split("\n").map(v => v.split(" "));
 
 
 /* Part 1 */

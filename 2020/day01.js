@@ -199,7 +199,7 @@ const input = `1713
 1569
 1970`;
 
-const inputs = input.split("\n").map(x => Number(x));
+const inputs = input.split("\n").map(v => Number(v));
 
 /* Part 1 */
 function part1() {

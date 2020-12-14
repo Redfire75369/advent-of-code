@@ -323,7 +323,7 @@ const input = `....#...............##...#...#.
 ##...#.........#.....#...#.....`;
 
 const rowsPartial = input.split("\n");
-const coordinateMatrix = rowsPartial.map(x => x.split(""));
+const coordinateMatrix = rowsPartial.map(v => v.split(""));
 
 /* Part 1 */
 function part1(dx, dy) {

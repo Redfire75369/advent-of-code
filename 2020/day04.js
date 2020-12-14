@@ -1,6 +1,6 @@
 const input = `byr:1971
 eyr:2039
-hgt:172in pid:170cm hcl:17106b iyr:2012 ecl:gry
+hgt:172Fin pid:170cm hcl:17106b iyr:2012 ecl:gry
 cid:339
 
 hgt:161cm eyr:2027
