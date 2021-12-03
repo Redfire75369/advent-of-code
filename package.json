@@ -9,6 +9,9 @@
   },
   "module": "commonjs",
   "private": true,
+  "scripts": {
+    "ts": "ts-node"
+  },
   "devDependencies": {
     "@types/node": "^16.11.11",
     "ts-node": "^10.4.0",
