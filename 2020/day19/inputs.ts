@@ -2,7 +2,7 @@ import { readFileSync } from "fs";
 import { join } from "path";
 
 function parseInputs(filePath): [{[id: string]: string | string[][]}, string[]] {
-	const sections = readFileSync(join(__dirname, filePath), {encoding: "utf8"}).split("\n").slice(0, -1).join("\n").split("\n\n");
+	const sections = readFileSync(join(__dirname, filePath), {encoding: "utf8"}).trim().split("\n\n");
 	const rules = {};
 	sections[0].split("\n").forEach(line => {
 		const split = line.split(": ");

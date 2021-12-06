@@ -2,7 +2,7 @@ import { readFileSync } from "fs";
 import { join } from "path";
 
 function parseInputs(filePath): [string[][], [number[], number[]][], number[], number[][]] {
-	const inputs = readFileSync(join(__dirname, filePath), {encoding: "utf8"}).split("\n").slice(0, -1).join("\n").split("\n\n").map(x => x.split("\n"));
+	const inputs = readFileSync(join(__dirname, filePath), {encoding: "utf8"}).trim().split("\n\n").map(x => x.split("\n"));
 	const validators: [number[], number[]][] = inputs[0].map(input => {
 		let validator = input.split(": ")[1].split(" or ");
 		return [validator[0].split("-").map(x => parseInt(x)), validator[1].split("-").map(x => parseInt(x))];

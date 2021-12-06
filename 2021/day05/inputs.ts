@@ -2,7 +2,7 @@ import { readFileSync } from "fs";
 import { join } from "path";
 
 function parseInputs(filePath) {
-	return readFileSync(join(__dirname, filePath), {encoding: "utf8"}).trim().split("\n");
+	return readFileSync(join(__dirname, filePath), {encoding: "utf8"}).trim().split("\n").map(l => l.split(" -> ").map(v => v.split(",")));
 }
 
 const sample = parseInputs("./sample.txt");

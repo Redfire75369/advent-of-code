@@ -47,7 +47,7 @@ function part2() {
 
 		if (co2Inputs.length !== 1) {
 			const digit = (2 * ones.length < co2Inputs.length) ? "1" : "0";
-			co2Inputs = co2Inputs.filter(input => input[j] === digit);
+			co2Inputs = co2Inputs.filter(input => input[i] === digit);
 		}
 
 		if (oxyInputs.length === 1) {

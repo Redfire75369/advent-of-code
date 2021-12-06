@@ -88,7 +88,6 @@ function part2() {
 			for (let i = 0; i < fieldIndexes.length; i++) {
 				let indexes = fieldIndexes[i];
 				let index = indexes.indexOf(single[0]);
-				console.log(i, indexes, index);
 				if (index !== -1 && i !== single[1]) {
 					fieldIndexes[i].splice(index, 1);
 				}

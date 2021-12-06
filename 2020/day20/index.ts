@@ -1,6 +1,6 @@
 import {sample, full} from "./inputs";
 
-const inputs = sample;
+const inputs = full;
 
 /* Part 1 */
 function part1() {

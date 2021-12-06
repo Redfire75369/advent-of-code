@@ -1,5 +1,3 @@
-console.log(__dirname);
-
 import {sample, full} from "./inputs";
 
 const inputs = full;

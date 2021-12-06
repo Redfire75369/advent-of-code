@@ -31,7 +31,6 @@ function validate(input: string, id, rules): [string[], boolean] {
 			}
 		}
 
-		// console.log(id, rule, input, remaining);
 		if (validRules === 0) {
 			return [[input], false];
 		} else {
@@ -42,10 +41,10 @@ function validate(input: string, id, rules): [string[], boolean] {
 
 /* Part 1 */
 function part1() {
-	// return inputs.filter(input => {
-	// 	const [left, valid] = validate(input, "0", rules);
-	// 	return valid && left.length === 0;
-	// }).length;
+	return inputs.filter(input => {
+		const [left, valid] = validate(input, "0", rules);
+		return valid && left.length === 0;
+	}).length;
 }
 
 console.log("Part 1: " + part1());

@@ -65,11 +65,10 @@ function part1() {
 		}, 0);
 	}, 0);
 
-	console.log(match, sum, draw);
 	return sum * draw;
 }
 
-// console.log("Part 1: " + part1());
+console.log("Part 1: " + part1());
 
 /* Part 2 */
 function part2() {
@@ -91,25 +90,12 @@ function part2() {
 		});
 
 		if (gridsLeft.length !== 1) {
-			console.log(i, number);
-			const tmpGridsLeft = gridsLeft.filter((grid, i) => {
-				if (number === "19" && i == 38) {
-					console.log(gridMatch(grid, markedLeft[i]))	;
-				}
-				return !gridMatch(grid, markedLeft[i]);
-			});
-			markedLeft = markedLeft.filter((marked, i) => {
-				if (number === "19") {
-					console.log(gridMatch(gridsLeft[i], marked));
-					console.log(1, i);
-				}
-				return !gridMatch(gridsLeft[i], marked);
-			});
+			const tmpGridsLeft = gridsLeft.filter((grid, i) => !gridMatch(grid, markedLeft[i]));
+			markedLeft = markedLeft.filter((marked, i) => !gridMatch(gridsLeft[i], marked));
 			gridsLeft = tmpGridsLeft;
 		}
 
 		if (gridsLeft.length === 1) {
-			console.log(gridsLeft, markedLeft);
 			if (gridMatch(gridsLeft[0], markedLeft[0])) {
 				draw = number;
 				break;
@@ -124,7 +110,6 @@ function part2() {
 		}, 0);
 	}, 0);
 
-	console.log(sum, draw);
 	return sum * draw;
 }
 

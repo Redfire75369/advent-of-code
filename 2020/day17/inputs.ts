@@ -17,7 +17,7 @@ function generateEmptyArray(dimensions: number, sizes: number[]) {
 }
 
 function parseInputs(filePath): [string[][][], string[][][][]] {
-	const matrix2D = readFileSync(join(__dirname, filePath), {encoding: "utf8"}).split("\n").slice(0, -1).map(x => {
+	const matrix2D = readFileSync(join(__dirname, filePath), {encoding: "utf8"}).trim().split("\n").map(x => {
 		const arr = x.split("");
 		const empty = generateEmptyArray(0, []);
 		for (let i = 0; i < 6; i++) {
