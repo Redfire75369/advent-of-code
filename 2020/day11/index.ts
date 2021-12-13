@@ -17,23 +17,21 @@ function nonRef2DArray(arr) {
 /* Part 1 */
 function part1() {
 	function countAdjacentSeats(x, y) {
+		const [minX, maxX] = [Math.max(0, x - 1), Math.min(x + 1, seats[0].length)];
+		const [minY, maxY] = [Math.max(0, y - 1), Math.min(y + 1, seats.length)];
+
 		let count = 0;
-		for (let i = -1; i < 2; i++) {
-			if (y + i >= 0 && y + i <= seats.length - 1) {
-				for (let j = -1; j < 2; j++) {
-					if (x + j >= 0 && x + j <= seats[0].length - 1) {
-						if (!(i === 0 && j === 0)) {
-							if (seats[y + i][x + j] === "#") {
-								count++;
-							}
-						}
+		for (let newY = minY; newY <= maxY; newY++) {
+			for (let newX = minX; newX <= maxX; newX++) {
+				if (x !== newX || y !== newY) {
+					if (seats[y][x] === "#") {
+						count++;
 					}
 				}
 			}
 		}
 		return count;
 	}
-
 
 	let seats = nonRef2DArray(inputs);
 	let newSeats = nonRef2DArray(seats);
