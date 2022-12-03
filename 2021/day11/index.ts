@@ -3,8 +3,8 @@ import {sample, full} from "./inputs";
 const inputs = full;
 
 function flashNeighbours(flashes, octopi, x, y) {
-	const [minX, maxX] = [Math.max(0, x - 1), Math.min(x + 1, octopi[0].length)];
-	const [minY, maxY] = [Math.max(0, y - 1), Math.min(y + 1, octopi.length)];
+	const [minX, maxX] = [Math.max(0, x - 1), Math.min(x + 1, octopi[0].length - 1)];
+	const [minY, maxY] = [Math.max(0, y - 1), Math.min(y + 1, octopi.length - 1)];
 
 	for (let y = minY; y <= maxY; y++) {
 		for (let x = minX; x <= maxX; x++) {
