@@ -1,20 +1,17 @@
 import {sample, full} from "./inputs";
+import {sum} from "../../utils/reducer";
+import {charCode} from "../../utils/char";
 
 const inputs = full;
 
-function priority(s: string) {
-	if (s.charCodeAt(0) >= "a".charCodeAt(0)) {
-		return s.charCodeAt(0) - "a".charCodeAt(0) + 1;
-	} else {
-		return s.charCodeAt(0) - "A".charCodeAt(0) + 27;
-	}
+function priority(s: string): number {
+	return charCode(s) + (charCode(s) > 0x60 ? 0 : 26);
 }
 
 /* Part 1 */
 function part1() {
 	return inputs.reduce((acc, input) => {
-		const shared = input[0].filter(char => input[1].includes(char))[0];
-		return acc + (shared ? priority(shared) : 0);
+		return acc + input[0].filter(char => input[1].includes(char)).reduce(sum(priority), 0);
 	}, 0);
 }
 
@@ -32,8 +29,7 @@ function part2() {
 	});
 
 	return inp.reduce((acc, input) => {
-		const shared = input[0].filter(char => input[1].includes(char) && input[2].includes(char))[0];
-		return acc + (shared ? priority(shared) : 0);
+		return acc + input[0].filter(char => input[1].includes(char) && input[2].includes(char)).reduce(sum(priority), 0);
 	}, 0);
 }
 

@@ -1,4 +1,5 @@
 import {sample, full} from "./inputs";
+import {alphabetCode} from "../../utils/char";
 
 const inputs = full;
 
@@ -12,8 +13,8 @@ function part1() {
 
 	return inputs.reduce((a, c) => {
 		const [c1, c2] = c;
-		const s1 = c2.charCodeAt(0) - 87;
-		let s2 = c1 == String.fromCharCode(c2.charCodeAt(0) - 23) ? 3 : (wins[c1] == c2) ? 6 : 0;
+		const s1 = alphabetCode(c2) - 23;
+		const s2 = wins[c1] === c2 ? 6 : (alphabetCode(c1) === s1 ? 3 : 0);
 		return a + s1 + s2;
 	}, 0);
 }
@@ -39,17 +40,11 @@ function part2() {
 			"Z": "A",
 		}
 	};
-	const match_points = {
-		"X": 0,
-		"Y": 3,
-		"Z": 6,
-	};
 
 	return inputs.reduce((a, c) => {
 		const [c1, c2] = c;
-		const play = situations[c1][c2];
-		const s1 = play.charCodeAt(0) - "A".charCodeAt(0) + 1;
-		const s2 = match_points[c2];
+		const s1 = alphabetCode(situations[c1][c2]);
+		const s2 = 3 * (alphabetCode(c2) - 24);
 		return a + s1 + s2;
 	}, 0);
 }

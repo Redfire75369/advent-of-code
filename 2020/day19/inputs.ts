@@ -1,5 +1,5 @@
-import { readFileSync } from "fs";
-import { join } from "path";
+import {readFileSync} from "fs";
+import {join} from "path";
 
 function parseInputs(filePath): [{[id: string]: string | string[][]}, string[]] {
 	const sections = readFileSync(join(__dirname, filePath), {encoding: "utf8"}).trim().split("\n\n");

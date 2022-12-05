@@ -1,5 +1,5 @@
-import { readFileSync } from "fs";
-import { join } from "path";
+import {readFileSync} from "fs";
+import {join} from "path";
 
 function generateEmptyArray(dimensions: number, sizes: number[]) {
 	if (dimensions === 0) {
