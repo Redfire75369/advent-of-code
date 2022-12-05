@@ -1,9 +1,11 @@
 import { readFileSync } from "fs";
 import { join } from "path";
 
-function parseInputs(filePath) {
+type Inputs = number[][];
+
+function parseInputs(filePath): Inputs {
 	return readFileSync(join(__dirname, filePath), {encoding: "utf8"}).trim().split("\n\n")
-		.map(s => s.trim().split("\n").map(str => parseInt(str.trim())));
+		.map(line => line.trim().split("\n").map(calories => parseInt(calories.trim())));
 }
 
 const sample = parseInputs("./sample.txt");

@@ -1,7 +1,9 @@
 import { readFileSync } from "fs";
 import { join } from "path";
 
-function parseInputs(filePath) {
+type Inputs = string[][];
+
+function parseInputs(filePath: string): Inputs {
 	return readFileSync(join(__dirname, filePath), {encoding: "utf8"}).trim().split("\n")
 		.map(s => s.trim().split(" "));
 }

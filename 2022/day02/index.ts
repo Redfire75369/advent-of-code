@@ -9,10 +9,11 @@ function part1() {
 		"B": "Z",
 		"C": "X",
 	};
+
 	return inputs.reduce((a, c) => {
 		const [c1, c2] = c;
 		const s1 = c2.charCodeAt(0) - 87;
-		let s2 = (c1 == String.fromCharCode(c2.charCodeAt(0) - 23)) ? 3 : (wins[c1] == c2) ? 6 : 0;
+		let s2 = c1 == String.fromCharCode(c2.charCodeAt(0) - 23) ? 3 : (wins[c1] == c2) ? 6 : 0;
 		return a + s1 + s2;
 	}, 0);
 }
@@ -43,6 +44,7 @@ function part2() {
 		"Y": 3,
 		"Z": 6,
 	};
+
 	return inputs.reduce((a, c) => {
 		const [c1, c2] = c;
 		const play = situations[c1][c2];
