@@ -17,7 +17,7 @@ function part1() {
 	return lowest;
 }
 
-console.log("Part 1: " + part1());
+console.log("Part 1:", part1());
 
 /* Part 2 */
 function part2() {
@@ -32,4 +32,4 @@ function part2() {
 	return lowest;
 }
 
-console.log("Part 2: " + part2());
+console.log("Part 2:", part2());

@@ -34,7 +34,7 @@ function part1() {
 	return findShortestPath(inputs,0, 0);
 }
 
-console.log("Part 1: " + part1());
+console.log("Part 1:", part1());
 
 /* Part 2 */
 function part2() {
@@ -49,4 +49,4 @@ function part2() {
 	return findShortestPath(risks,0, 0);
 }
 
-console.log("Part 2: " + part2());
+console.log("Part 2:", part2());

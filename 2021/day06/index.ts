@@ -18,7 +18,7 @@ function part1() {
 	return fishes.length;
 }
 
-console.log("Part 1: " + part1());
+console.log("Part 1:", part1());
 
 /* Part 2 */
 function part2() {
@@ -42,4 +42,4 @@ function part2() {
 	return fishes.reduce((acc, x) => acc + x[1], 0);
 }
 
-console.log("Part 2: " + part2());
+console.log("Part 2:", part2());

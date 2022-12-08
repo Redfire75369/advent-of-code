@@ -9,7 +9,7 @@ function part1() {
 	return Math.max(...totals);
 }
 
-console.log("Part 1: " + part1());
+console.log("Part 1:", part1());
 
 /* Part 2 */
 function part2() {
@@ -17,4 +17,4 @@ function part2() {
 	return totals.sort((a, b) => b - a).slice(0, 3).reduce(sum(), 0);
 }
 
-console.log("Part 2: " + part2());
+console.log("Part 2:", part2());

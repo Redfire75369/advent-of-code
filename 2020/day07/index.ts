@@ -39,7 +39,7 @@ function part1() {
 	return Object.keys(rules).filter(x => hasShinyGold(rules[x])).length;
 }
 
-console.log("Part 1: " + part1());
+console.log("Part 1:", part1());
 
 function part2() {
 	function countWithin(rule) {
@@ -53,4 +53,4 @@ function part2() {
 	return countWithin(rules["shiny gold"]);
 }
 
-console.log("Part 2: " + part2());
+console.log("Part 2:", part2());

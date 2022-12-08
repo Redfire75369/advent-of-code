@@ -35,7 +35,7 @@ function part1() {
 	return grid.reduce((acc, row) => acc + row.filter(s => s >= 2).length, 0);
 }
 
-console.log("Part 1: " + part1());
+console.log("Part 1:", part1());
 
 /* Part 2 */
 function part2() {
@@ -65,4 +65,4 @@ function part2() {
 	return grid.reduce((acc, row) => acc + row.filter(s => s >= 2).length, 0);
 }
 
-console.log("Part 2: " + part2());
+console.log("Part 2:", part2());

@@ -38,7 +38,7 @@ function part1() {
 	return foldGrid(g, ...folds[0]).reduce((acc, r) => acc + r.reduce((acc, c) => acc + (c === "#" ? 1 : 0), 0), 0);
 }
 
-console.log("Part 1: " + part1());
+console.log("Part 1:", part1());
 
 /* Part 2 */
 function part2() {
