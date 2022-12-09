@@ -19,12 +19,14 @@ function moveHead(head: Knot, move: string) {
 function pullKnot(head: Knot, tail: Knot) {
 	const dx = head[0] - tail[0];
 	const dy = head[1] - tail[1]
-	if (Math.abs(dx) > 1 || Math.abs(dy) > 1) {
-		if (Math.abs(dx) === 2 && dy === 0) {
+
+	const absDx = Math.abs(dx);
+	const absDy = Math.abs(dy);
+	if (absDx > 1 || absDy > 1) {
+		if ((absDx === 2 || dx === 0) && (absDy === 2 || dy === 0)) {
 			tail[0] += dx / 2;
-		} else if (Math.abs(dy) === 2 && dx === 0) {
 			tail[1] += dy / 2;
-		} else if (Math.abs(dx) > Math.abs(dy)) {
+		} else if (absDx > absDy) {
 			tail[0] += dx /2;
 			tail[1] += dy;
 		} else {
