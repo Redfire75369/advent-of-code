@@ -1,4 +1,4 @@
-import {sample, full} from "./inputs";
+import {samples, full} from "./inputs";
 
 const inputs = full;
 
