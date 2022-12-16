@@ -84,7 +84,10 @@ function part2() {
 	filtered.sort((a, b) => b[0] - a[0]);
 
 	let max = 0;
-	for (let i = 0; i < filtered.length / 10; i++) {
+	for (let i = 0; i < filtered.length; i++) {
+		if (max - filtered[i][0] > filtered[0][0]) {
+			break;
+		}
 		for (let j = 0; j < i; j++) {
 			if ((filtered[i][1] & filtered[j][1]) === 0) {
 				max = Math.max(max, filtered[i][0] + filtered[j][0]);
