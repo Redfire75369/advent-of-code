@@ -5,9 +5,6 @@
     "sourceMap": true,
     "esModuleInterop": true,
     "baseUrl": ".",
-    "paths": {
-      "utils": ["utils"]
-    }
   },
   "exclude": [
     "node_modules"
