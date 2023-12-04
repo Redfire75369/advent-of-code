@@ -1,12 +1,17 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "commonjs",
+    "module": "esnext",
     "sourceMap": true,
     "esModuleInterop": true,
     "baseUrl": ".",
+    "allowImportingTsExtensions": true,
   },
   "exclude": [
-    "node_modules"
-  ]
+    "node_modules",
+  ],
+  "ts-node": {
+    "esm": true,
+    "swc": true,
+  }
 }
