@@ -1,5 +1,5 @@
 import {sample, full} from "./inputs";
-import {int} from "../../utils/int";
+import {int} from "../../utils/int.ts";
 
 const inputs = full;
 

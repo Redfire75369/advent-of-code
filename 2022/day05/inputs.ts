@@ -1,6 +1,7 @@
 import {readFileSync} from "fs";
-import {join} from "path";
-import {int} from "../../utils/int";
+import {dirname, join} from "path";
+import {fileURLToPath} from "url";
+import {int} from "../../utils/int.ts";
 
 interface Move {
 	amount: number,
@@ -13,6 +14,7 @@ type Inputs = {
 	moves: Move[],
 };
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 function parseInputs(filePath: string): Inputs {
 	const [initial, moves] = readFileSync(join(__dirname, filePath), {encoding: "utf8"}).split("\n\n");
 	const lines = initial.split("\n");

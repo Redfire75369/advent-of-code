@@ -1,6 +1,6 @@
 import {sample, full} from "./inputs";
-import {sum} from "../../utils/reducer";
-import {charCode} from "../../utils/char";
+import {sum} from "../../utils/reducer.ts";
+import {charCode} from "../../utils/char.ts";
 
 const inputs = full;
 

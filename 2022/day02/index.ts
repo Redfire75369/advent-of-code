@@ -1,5 +1,5 @@
 import {sample, full} from "./inputs";
-import {alphabetCode} from "../../utils/char";
+import {alphabetCode} from "../../utils/char.ts";
 
 const inputs = full;
 

@@ -1,6 +1,7 @@
 import {readFileSync} from "fs";
-import {join} from "path";
-import {alphabetCode} from "../../utils/char";
+import {dirname, join} from "path";
+import {fileURLToPath} from "url";
+import {alphabetCode} from "../../utils/char.ts";
 
 type Inputs = {
 	start: [number, number],
@@ -20,6 +21,7 @@ function getCoordinateOfString(lines: string[][], string: string): [number, numb
 	}, [-1, -1]);
 }
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 function parseInputs(filePath: string): Inputs {
 	const lines = readFileSync(join(__dirname, filePath), {encoding: "utf8"}).trim().split("\n")
 		.map(s => s.split(""));

@@ -1,5 +1,5 @@
 import {sample, full, Blueprint} from "./inputs";
-import {product} from "../../utils/reducer";
+import {product} from "../../utils/reducer.ts";
 
 const inputs = full;
 

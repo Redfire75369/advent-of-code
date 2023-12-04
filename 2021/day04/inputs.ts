@@ -1,7 +1,9 @@
 import {readFileSync} from "fs";
-import {join} from "path";
+import {dirname, join} from "path";
+import {fileURLToPath} from "url";
 
-function parseInputs(filePath): [string[], string[][][], boolean[][][]] {
+const __dirname = dirname(fileURLToPath(import.meta.url));
+function parseInputs(filePath: string): [string[], string[][][], boolean[][][]] {
 	const sections = readFileSync(join(__dirname, filePath), {encoding: "utf8"}).trim().split("\n\n");
 	const order = sections[0].split(",");
 	const grids = sections.slice(1).map(v => v.trim().split("\n").map(v => v.trim().split(/\s/g)));

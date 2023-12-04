@@ -1,16 +1,18 @@
 import {readFileSync} from "fs";
-import {join} from "path";
-import {int} from "../../utils/int";
+import {dirname, join} from "path";
+import {fileURLToPath} from "url";
+import {int} from "../../utils/int.ts";
 
 interface Monkey {
 	items: number[],
-	operation: (number) => number,
+	operation: (n: number) => number,
 	test: number,
 	throwTo: [number, number],
 }
 
 type Inputs = Monkey[];
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 function parseInputs(filePath: string): Inputs {
 	return readFileSync(join(__dirname, filePath), {encoding: "utf8"}).trim().split("\n\n")
 		.map(monkey => {

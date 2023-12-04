@@ -1,5 +1,6 @@
 import {readFileSync} from "fs";
-import {join} from "path";
+import {dirname, join} from "path";
+import {fileURLToPath} from "url";
 
 function generateEmptyArray(dimensions: number, sizes: number[]) {
 	if (dimensions === 0) {
@@ -16,7 +17,8 @@ function generateEmptyArray(dimensions: number, sizes: number[]) {
 	}
 }
 
-function parseInputs(filePath): [string[][][], string[][][][]] {
+const __dirname = dirname(fileURLToPath(import.meta.url));
+function parseInputs(filePath: string): [string[][][], string[][][][]] {
 	const matrix2D = readFileSync(join(__dirname, filePath), {encoding: "utf8"}).trim().split("\n").map(x => {
 		const arr = x.split("");
 		const empty = generateEmptyArray(0, []);

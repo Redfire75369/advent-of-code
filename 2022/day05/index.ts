@@ -1,6 +1,6 @@
 import {sample, full} from "./inputs";
-import {sum} from "../../utils/reducer";
-import {clone} from "../../utils/clone";
+import {sum} from "../../utils/reducer.ts";
+import {clone} from "../../utils/clone.ts";
 
 const inputs = full;
 

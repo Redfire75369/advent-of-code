@@ -1,6 +1,5 @@
 import {sample, full} from "./inputs";
-import {sum} from "../../utils/reducer";
-import * as async_hooks from "async_hooks";
+import {sum} from "../../utils/reducer.ts";
 
 const inputs = full;
 

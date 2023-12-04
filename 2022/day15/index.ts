@@ -1,5 +1,5 @@
 import {sample, full} from "./inputs";
-import {sum} from "../../utils/reducer";
+import {sum} from "../../utils/reducer.ts";
 
 const inputs = full;
 const isFull = inputs.length === full.length;

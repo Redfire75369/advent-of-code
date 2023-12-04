@@ -1,5 +1,5 @@
 import {full} from "./inputs";
-import {product} from "../../utils/reducer";
+import {product} from "../../utils/reducer.ts";
 import {
 	atCorner,
 	atEdge,

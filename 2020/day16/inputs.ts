@@ -1,7 +1,9 @@
 import {readFileSync} from "fs";
-import {join} from "path";
+import {dirname, join} from "path";
+import {fileURLToPath} from "url";
 
-function parseInputs(filePath): [string[][], [number[], number[]][], number[], number[][]] {
+const __dirname = dirname(fileURLToPath(import.meta.url));
+function parseInputs(filePath: string): [string[][], [number[], number[]][], number[], number[][]] {
 	const inputs = readFileSync(join(__dirname, filePath), {encoding: "utf8"}).trim().split("\n\n").map(x => x.split("\n"));
 	const validators: [number[], number[]][] = inputs[0].map(input => {
 		let validator = input.split(": ")[1].split(" or ");

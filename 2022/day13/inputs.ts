@@ -1,11 +1,13 @@
 import {readFileSync} from "fs";
-import {join} from "path";
+import {dirname, join} from "path";
+import {fileURLToPath} from "url";
 
 export type Value = number | Value[];
-export type Pair = [Value, Value]
+export type Pair = [Value, Value];
 
 type Inputs = Pair[];
 
+const __dirname = dirname(fileURLToPath(import.meta.url));
 function parseInputs(filePath: string): Inputs {
 	return readFileSync(join(__dirname, filePath), {encoding: "utf8"}).trim().split("\n\n")
 		.map(s => {

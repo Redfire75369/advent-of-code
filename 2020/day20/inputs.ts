@@ -2,10 +2,9 @@ import {readFileSync} from "fs";
 import {join} from "path";
 import {Tile} from "./tile";
 
-
 type Inputs = Tile[];
 
-function parseInputs(filePath): Inputs {
+function parseInputs(filePath: string): Inputs {
 	return readFileSync(join(__dirname, filePath), {encoding: "utf8"}).trim().split("\n\n")
 		.map(tile => {
 			const index = parseInt(tile.substring(5, 9));
