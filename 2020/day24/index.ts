@@ -1,4 +1,4 @@
-import {sample, full} from "./inputs";
+import {sample, full} from "./inputs.ts";
 import {int} from "../../utils/int.ts";
 
 const inputs = full;

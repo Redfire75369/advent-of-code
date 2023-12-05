@@ -1,4 +1,4 @@
-import {full} from "./inputs";
+import {full} from "./inputs.ts";
 import {product} from "../../utils/reducer.ts";
 import {
 	atCorner,

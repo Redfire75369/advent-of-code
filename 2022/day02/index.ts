@@ -1,4 +1,4 @@
-import {sample, full} from "./inputs";
+import {sample, full} from "./inputs.ts";
 import {alphabetCode} from "../../utils/char.ts";
 
 const inputs = full;

@@ -1,4 +1,4 @@
-import {sample} from "./inputs";
+import {sample} from "./inputs.ts";
 import {sum} from "../../utils/reducer.ts";
 
 const inputs = sample;

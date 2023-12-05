@@ -1,4 +1,4 @@
-import {samples, full} from "./inputs";
+import {samples, full} from "./inputs.ts";
 
 const connections = full;
 

@@ -1,4 +1,4 @@
-import {sample, full} from "./inputs";
+import {sample, full} from "./inputs.ts";
 
 const [order, grids, marked] = full;
 

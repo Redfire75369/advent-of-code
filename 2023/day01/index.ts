@@ -1,4 +1,4 @@
-import {samples, full} from "./inputs";
+import {samples, full} from "./inputs.ts";
 import {sum} from "../../utils/reducer.ts";
 
 const inputs = full;

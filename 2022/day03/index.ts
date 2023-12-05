@@ -1,4 +1,4 @@
-import {sample, full} from "./inputs";
+import {sample, full} from "./inputs.ts";
 import {sum} from "../../utils/reducer.ts";
 import {charCode} from "../../utils/char.ts";
 

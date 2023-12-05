@@ -9,7 +9,8 @@
     "noEmit": true,
     "alwaysStrict": true,
     "strict": true,
-
+    "strictNullChecks": false,
+    
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "importsNotUsedAsValues": "error",

@@ -1,4 +1,4 @@
-import {sample, full} from "./inputs";
+import {sample, full} from "./inputs.ts";
 import {RingBuffer, RingElement} from "../../utils/collections/ring.ts";
 
 const inputs = full;
@@ -37,7 +37,7 @@ function part1() {
 		current = playTurn(ring, current);
 	}
 
-	let cup = ring.get(1).next;
+	let cup = ring.get(1)?.next;
 	const labels: number[] = [];
 	while (cup.value !== 1) {
 		labels.push(cup.value);
