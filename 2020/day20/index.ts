@@ -1,4 +1,4 @@
-import {full} from "./inputs.ts";
+import {sample, full} from "./inputs.ts";
 import {product} from "../../utils/reducer.ts";
 import {
 	atCorner,
@@ -13,7 +13,7 @@ import {
 	outerCornerEdges,
 	outerEdgeEdges,
 	Tile
-} from "./tile";
+} from "./tile.ts";
 
 const inputs = full;
 

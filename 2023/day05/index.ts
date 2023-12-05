@@ -1,5 +1,5 @@
-import {chunks} from "../../utils/iterator.ts";
 import {sample, full} from "./inputs.ts";
+import {chunks} from "../../utils/iterator.ts";
 
 const {seeds, maps} = full;
 
