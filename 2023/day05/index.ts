@@ -1,3 +1,4 @@
+import {chunks} from "../../utils/iterator.ts";
 import {sample, full} from "./inputs.ts";
 
 const {seeds, maps} = full;
@@ -23,8 +24,8 @@ console.log("Part 1:", part1());
 /* Part 2 */
 function part2() {
 	let ranges: [number, number][] = [];
-	for (let i = 0; i < seeds.length; i += 2) {
-		ranges.push([seeds[i], seeds[i] + seeds[i + 1] - 1]);
+	for (const [start, range] of chunks(seeds, 2)) {
+		ranges.push([start, start + range - 1]);
 	}
 
     for (const map of maps) {

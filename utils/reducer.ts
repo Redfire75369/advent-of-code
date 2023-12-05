@@ -1,7 +1,22 @@
-export function sum(callback = (c, _i: number) => c) {
-	return (acc: number, cur, index: number) => acc + callback(cur, index);
+type Callback<T> = (c: T, i: number) => number;
+type ReduceCallback<T> = (acc: number, cur: T, index: number) => number;
+
+export function sum(): ReduceCallback<number>;
+export function sum<T>(callback: Callback<T>): ReduceCallback<T>;
+export function sum<T>(callback?: Callback<T>): ReduceCallback<number> | ReduceCallback<T> {
+	if (callback === undefined) {
+		return (acc: number, cur: number, _i: number) => acc + cur;
+	} else {
+		return (acc: number, cur: T, index: number) => acc + callback(cur, index);
+	}
 }
 
-export function product(callback = (c) => c) {
-	return (acc: number, cur) => acc * callback(cur);
+export function product(): ReduceCallback<number>;
+export function product<T>(callback: Callback<T>): ReduceCallback<T>;
+export function product<T>(callback?: Callback<T>): ReduceCallback<number> | ReduceCallback<T> {
+	if (callback === undefined) {
+		return (acc: number, cur: number, _i: number) => acc * cur;
+	} else {
+		return (acc: number, cur: T, index: number) => acc * callback(cur, index);
+	}
 }

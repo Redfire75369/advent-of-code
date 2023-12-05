@@ -1,4 +1,5 @@
 import {sample, full} from "./inputs";
+import {RingBuffer, RingElement} from "../../utils/collections/ring.ts";
 
 const inputs = full;
 
@@ -37,7 +38,7 @@ function part1() {
 	}
 
 	let cup = ring.get(1).next;
-	const labels = [];
+	const labels: number[] = [];
 	while (cup.value !== 1) {
 		labels.push(cup.value);
 		cup = cup.next;
@@ -49,12 +50,6 @@ console.log("Part 1:", part1());
 
 /* Part 2 */
 function part2() {
-	const moreInputs = [...inputs];
-
-	for (let i = inputs.length; i < 1e6; i++) {
-		moreInputs[i] = i + 1;
-	}
-
 	const ring = new RingBuffer(inputs);
 	let current = ring.elements.get(inputs[0]);
 

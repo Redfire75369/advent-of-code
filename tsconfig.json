@@ -2,10 +2,30 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "sourceMap": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "moduleResolution": "nodenext",
+
+    "jsx": "preserve",
+    "noEmit": true,
+    "alwaysStrict": true,
+    "strict": true,
+
     "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "importsNotUsedAsValues": "error",
+    "isolatedModules": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "preserveValueImports": true,
+
     "baseUrl": ".",
+    "sourceMap": true,
+    "skipLibCheck": true,
     "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "incremental": true
   },
   "exclude": [
     "node_modules",

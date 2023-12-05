@@ -1,4 +1,4 @@
-class RingElement<T> {
+export class RingElement<T> {
 	public readonly value: T;
 	public next: RingElement<T> | null;
 
@@ -8,7 +8,7 @@ class RingElement<T> {
 	}
 }
 
-class RingBuffer<T> {
+export class RingBuffer<T> {
 	public readonly elements: Map<T, RingElement<T>>;
 
 	constructor(values: T[]) {
