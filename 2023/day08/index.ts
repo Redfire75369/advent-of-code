@@ -1,5 +1,5 @@
 import {samples, full} from "./inputs.ts";
-import {lcm} from "../../utils/reducer.js";
+import {lcm} from "../../utils/reducer.ts";
 
 const inputs = full;
 

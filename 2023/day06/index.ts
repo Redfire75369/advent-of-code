@@ -1,5 +1,5 @@
 import {sample, full} from "./inputs.ts";
-import {zip} from "../../utils/iterator.js";
+import {zip} from "../../utils/iterator.ts";
 
 const inputs = full;
 

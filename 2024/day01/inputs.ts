@@ -7,9 +7,13 @@ type Inputs = [number[], number[]];
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 function parseInputs(filePath: string): Inputs {
-	const [times, distances] = readFileSync(join(__dirname, filePath), {encoding: "utf8"}).trim().split("\n")
-		.map(line => line.split(/\s+/).slice(1).map(int()));
-	return [times, distances];
+	return readFileSync(join(__dirname, filePath), {encoding: "utf8"}).trim().split("\n")
+		.map(line => line.split("   ").map(int()))
+		.reduce((acc, [a, b]) => {
+			acc[0].push(a);
+			acc[1].push(b);
+			return acc;
+		}, [[], []]);
 }
 
 const sample = parseInputs("./sample.txt");
