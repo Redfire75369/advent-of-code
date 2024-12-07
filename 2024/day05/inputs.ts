@@ -1,7 +1,7 @@
 import {readFileSync} from "fs";
 import {dirname, join} from "path";
 import {fileURLToPath} from "url";
-import {int} from "../../utils/int.js";
+import {int} from "../../utils/int.ts";
 
 type Inputs = [[number, number][], number[][]];
 

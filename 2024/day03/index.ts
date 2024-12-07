@@ -1,5 +1,5 @@
 import {samples, full} from "./inputs.ts";
-import {sum} from "../../utils/reducer.js";
+import {sum} from "../../utils/reducer.ts";
 
 const input = full;
 
