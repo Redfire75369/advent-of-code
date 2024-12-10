@@ -46,5 +46,4 @@ function part2() {
 	return crt.map(line => line.join("")).join("\n");
 }
 
-console.log("Part 2:")
-console.log(part2());
+console.log("Part 2:", part2());

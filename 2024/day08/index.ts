@@ -3,7 +3,7 @@ import {sample, full} from "./inputs.ts";
 const [size, antennas] = full;
 
 function checkAdd(unique: Set<string>, x: number, y: number): boolean {
-	if (0 <= x && x < size[0] && 0 <= y && y < size[1]) {
+	if (0 <= x && x < size[0] && 0 <= y &&y < size[1]) {
 		unique.add([x, y].join(","));
 		return true;
 	}
